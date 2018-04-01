@@ -3,3 +3,10 @@ body {
     background-color:  #d4d4dc;
     min-width: 1024px;
 }
+
+input.ng-invalid.ng-dirty{
+    border: 1px solid red;
+}
+button:hover,a.btn:hover{
+    cursor: pointer;
+   }
