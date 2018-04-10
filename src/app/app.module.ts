@@ -21,6 +21,7 @@ import { EmployeeComponent } from './components/employees/employee/employee.comp
 import { EmployeeListComponent } from './components/employees/employee-list/employee-list.component';
 import { FormsModule} from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'acasa', component: AcasaComponent },
@@ -55,6 +56,7 @@ const appRoutes: Routes = [
     MatButtonModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot()
   ],
   providers: [],

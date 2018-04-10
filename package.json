@@ -23,11 +23,14 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@types/googlemaps": "^3.30.8",
     "angularfire2": "^5.0.0-rc.6",
     "core-js": "^2.4.1",
     "firebase": "^4.12.1",
     "ngx-toastr": "^8.3.2",
+    "nodemailer": "^4.6.4",
     "rxjs": "^5.5.6",
+    "save": "^2.3.2",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
