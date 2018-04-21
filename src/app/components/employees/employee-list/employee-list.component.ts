@@ -19,7 +19,6 @@ export class EmployeeListComponent implements OnInit {
         const y = element.payload.toJSON();
         y['$key'] = element.key;
         this.employeeList.push(y as Employee);
-        console.log('this.employeeList: ', this.employeeList);
       });
     });
   }

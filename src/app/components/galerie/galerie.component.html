@@ -1,7 +1,30 @@
 <h2>Galerie</h2>
-<p>
-  This is my first webpage! I was able to code all the HTML and CSS in order to make it. Watch out world of web design here I come!
-</p>
-<p> 
-  I can use my skills here to create websites for my business, my friends and family, my C.V, blog or articles. As well as any games or more experiment stuff (which is what the web is really all about). 
-</p>
+<div class="modal fade" id="selectedImageModal" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="selectedImage" *ngIf="selectedImage">
+          <img src="{{selectedImage.url}}" >
+          <div class="btn-back" (click)=navigate(false)>
+             &lt;
+          </div>
+          <div class="btn-forward" (click)=navigate(true)>
+             &gt;
+          </div>
+          <!-- <div class="caption">
+             <p><strong>{{selectedImage.title}}</strong></p>
+             <p>{{selectedImage.caption}}</p>
+          </div> -->
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <ul id="thumbnailsList">
+     <li *ngFor="let image of datasource" >
+        <img src="{{image.url}}" class="tn"
+      width="191" height="146"  
+      data-toggle="modal" data-target="#selectedImageModal"
+                (click)=setSelectedImage(image)>
+     </li>
+  </ul>

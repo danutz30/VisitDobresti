@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  images;
   today: number = Date.now();
+  constructor() {
+  }
 }

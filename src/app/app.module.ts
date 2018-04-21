@@ -1,3 +1,4 @@
+import { StatusesService } from './components/blog/status.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +23,7 @@ import { EmployeeListComponent } from './components/employees/employee-list/empl
 import { FormsModule} from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MomentModule } from 'ngx-moment';
 
 const appRoutes: Routes = [
   { path: 'acasa', component: AcasaComponent },
@@ -57,9 +59,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MomentModule
   ],
-  providers: [],
+  providers: [StatusesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
