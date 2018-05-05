@@ -1,7 +1,20 @@
 <h2>Istoric</h2>
-<p>
-  This is my first webpage! I was able to code all the HTML and CSS in order to make it. Watch out world of web design here I come!
-</p>
-<p> 
-  I can use my skills here to create websites for my business, my friends and family, my C.V, blog or articles. As well as any games or more experiment stuff (which is what the web is really all about). 
-</p>
+<button (click)="showEditor()"> Show Istoric Editor</button>
+<div *ngIf="show"> 
+<ckeditor 
+		[(ngModel)]="ckeditorContent" 
+		[config]="{uiColor: '#2e6b48'}" 
+		[readonly]="false" 
+		(change)="onChange($event)" 
+		(editorChange)="onEditorChange($event)"
+		 (ready)="onReady($event)" 
+		 (focus)="onFocus($event)" 
+		 (blur)="onBlur($event)" 
+		 (contentDom)="onContentDom($event)" 
+		 (fileUploadRequest)="onFileUploadRequest($event)"
+		 debounce="500">
+</ckeditor>
+<button (click)="postHistory()"> Post Istoric</button>
+</div>
+
+<div [innerHTML]="html"></div>

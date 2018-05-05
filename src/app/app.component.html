@@ -17,34 +17,50 @@
     text
   </div> -->
 
-  <div id="page">
-		<div id="logo">
-			<h1><a routerLink="/acasa" routerLinkActive="active" id="logoLink"><img src="/assets/img/logo3.png"
-				class="log"></a></h1>
+<div id="page">
+	<div id="logo">
+		<h1>
+			<a routerLink="/acasa" routerLinkActive="active" id="logoLink">
+				<img src="/assets/img/logo3.png" class="log">
+			</a>
+		</h1>
 
-		</div>
-		<div id="nav">
-			<ul>
-				<li><a routerLink="/acasa" routerLinkActive="active">Acasa</a></li>
-				<li><a routerLink="/istoric" routerLinkActive="active">Istoric</a></li>
-				<li><a routerLink="/galerie" routerLinkActive="active">Galerie</a></li>
-				<li><a routerLink="/blog" routerLinkActive="active">Forum</a></li>
-				<li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-			</ul>	
-		</div>
-		<div id="header">
-				<img src="/assets/img/vd.jpg"
-				class="img">
-		</div>
-		<div id="content">
-			<router-outlet></router-outlet>
-		</div>
-		<div id="footer">
-			<span>
-				{{today | date}}
-			</span>
-			<p>
-				Webpage made by <a href="/" target="_blank">[Daniela Anca]</a>
-			</p>
-		</div>
 	</div>
+	<div id="nav">
+		<ul>
+			<li>
+				<a routerLink="/acasa" routerLinkActive="active">Acasa</a>
+			</li>
+			<li>
+				<a routerLink="/stiri" routerLinkActive="active">Stiri</a>
+			</li>
+			<li>
+				<a routerLink="/istoric" routerLinkActive="active">Istoric</a>
+			</li>
+			<li>
+				<a routerLink="/galerie" routerLinkActive="active">Galerie</a>
+			</li>
+			<li>
+				<a routerLink="/blog" routerLinkActive="active">Forum</a>
+			</li>
+			<li>
+				<a routerLink="/contact" routerLinkActive="active">Contact</a>
+			</li>
+		</ul>
+	</div>
+	<div id="header">
+		<img src="/assets/img/vd.jpg" class="img">
+	</div>
+	<div id="content">
+		<router-outlet></router-outlet>
+	</div>
+	<div id="footer">
+		<span>
+			{{today | date}}
+		</span>
+		<p>
+			Webpage made by
+			<a href="/" target="_blank">[Daniela Anca]</a>
+		</p>
+	</div>
+</div>

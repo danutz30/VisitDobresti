@@ -1,3 +1,5 @@
+import { StiriService } from './components/stiri/stiri.service';
+import { IstoricService } from './components/istoric/istoric.service';
 import { StatusesService } from './components/blog/status.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -20,14 +22,19 @@ import { BlogComponent } from './components/blog/blog.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { EmployeeComponent } from './components/employees/employee/employee.component';
 import { EmployeeListComponent } from './components/employees/employee-list/employee-list.component';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MomentModule } from 'ngx-moment';
+import { CKEditorModule } from 'ng2-ckeditor';
+import { StiriComponent } from './components/stiri/stiri.component';
+import { StiriDetaliateComponent } from './components/stiri/stiri-detaliate/stiri-detaliate.component';
 
 const appRoutes: Routes = [
   { path: 'acasa', component: AcasaComponent },
-  { path: '',   redirectTo: '/acasa', pathMatch: 'full' },
+  { path: '', redirectTo: '/acasa', pathMatch: 'full' },
+  { path: 'stiri', component: StiriComponent },
+  { path: 'stiri/:id/detalii', component: StiriDetaliateComponent },
   { path: 'istoric', component: IstoricComponent },
   { path: 'galerie', component: GalerieComponent },
   { path: 'blog', component: BlogComponent },
@@ -45,7 +52,9 @@ const appRoutes: Routes = [
     BlogComponent,
     EmployeesComponent,
     EmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    StiriComponent,
+    StiriDetaliateComponent
   ],
   imports: [
     BrowserModule,
@@ -60,9 +69,15 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-    MomentModule
+    MomentModule,
+    CKEditorModule
+
   ],
-  providers: [StatusesService],
+  providers: [
+    StatusesService,
+    IstoricService,
+    StiriService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

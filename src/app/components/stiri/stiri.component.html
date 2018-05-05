@@ -1,0 +1,73 @@
+<h1>Stiri</h1>
+
+<div class="new-news">
+  <form action="#" [formGroup]="newsForm" (ngSubmit)="addNews()">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <!-- <input #fileInput type="file" id="imgFile" (change)="onSelectImage($event)" class="image-file-hidden"> -->
+          <!-- <label>Imagine stire:</label>
+          <div class="form-edit-group" (click)="fileInput.click()"> -->
+            <!-- <input class="form-control" formControlName="imagine" /> -->
+            <label for="file">Imagine stire:</label>
+            <input type="file" (change)="onSelectImage($event)" formControlName="imagine" accept=".png,.jpg"/>
+          <!-- </div> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Titlu stire:</label>
+          <div class="form-edit-group">
+            <input class="form-control" formControlName="titlu" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <label>Descriere stire:</label>
+    <textarea class="form-control" formControlName="descriere" rows="4"> </textarea>
+    <label style="padding-top: 10px;">Adauga continutul stirii:</label>
+    <ckeditor 
+		[(ngModel)]="ckeditorContent" 
+		[config]="{uiColor: '#2e6b48'}" 
+		[readonly]="false" 
+		(change)="onChange($event)" 
+		(editorChange)="onEditorChange($event)"
+		 (ready)="onReady($event)" 
+		 (focus)="onFocus($event)" 
+		 (blur)="onBlur($event)" 
+		 (contentDom)="onContentDom($event)" 
+		 (fileUploadRequest)="onFileUploadRequest($event)"
+     debounce="500"
+     formControlName="continut">
+    </ckeditor>
+    <!-- <div class="text-center col-md-12 pt-5"> -->
+      <button class="btn">Salveaza stirea</button>
+    <!-- </div> -->
+  </form>
+</div>
+
+
+<a routerLink="1/detalii">
+  <div class="news">
+    <div class="news-image">
+      <img src="/assets/img/logo1.png">
+    </div>
+    <div class="news-title ">
+      <h3>Bodog vrea mutarea Spitalului Judeţean în subordinea CJ Bihor: Primăria Oradea e de vină pentru reducerea sporurilor</h3>
+    </div>
+    <div class="news-description ">
+    </div>
+  </div>
+</a>
+<a routerLink="2/detalii">
+  <div class="news">
+    <div class="news-image">
+      <img src="/assets/img/logo3.png">
+    </div>
+    <div class="news-title ">
+      <h3>Bodog vrea mutarea Spitalului Judeţean în subordinea CJ Bihor: Primăria Oradea e de vină pentru reducerea sporurilor</h3>
+    </div>
+    <div class="news-description ">
+    </div>
+  </div>
+</a>

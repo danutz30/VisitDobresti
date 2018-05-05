@@ -1,0 +1,43 @@
+.news {
+    width: 100%;
+    background-color: #ffffff;
+    height: 153px;
+    border-bottom: 3px solid #f0f0f0;
+  }
+  
+  .news-image {
+    width: 180px;
+    height: 150px;
+    float: left;
+  }
+  
+img {
+    width: 180px;
+    height: 150px;
+}
+
+  .news-title {
+    width: 100%;
+    height: 60px;
+  }
+  
+  .news-description {
+    width: 100%;
+    height: 90px;
+  }
+  
+  .image-file-hidden {
+    width: 1px;
+    height: 1px;
+    position: fixed;
+    left: -1111111px;
+    right: -1111111px;
+  }
+  
+  .btn {
+      padding-top: 10px;
+  }
+
+  .new-news {
+      padding-bottom: 25px;
+  }
