@@ -1,22 +1,3 @@
-<!-- <div class="app">
-  <span class="top-left">Visit Dobresti</span>
-  <img src="/assets/img/vd.jpg"
-    class="img"> -->
-<!--   
-  <div>
-  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-  <mat-menu #menu="matMenu" class="menu">
-    <button mat-menu-item>Acasa</button>
-    <button mat-menu-item>Despre</button>
-    <button mat-menu-item>Contact</button>
-    <button mat-menu-item>Galerie</button>
-  </mat-menu>
-</div>
-</div>
-<div class="content">
-    text
-  </div> -->
-
 <div id="page">
 	<div id="logo">
 		<h1>
@@ -47,7 +28,11 @@
 				<a routerLink="/contact" routerLinkActive="active">Contact</a>
 			</li>
 		</ul>
+		<span *ngIf="user?.email" style="color: green; font-size: 16px;">Salut, {{user?.email}}</span>
+		<span *ngIf="!this.authService.isLoggedIn()"><button class="login" (click)="openDialog()">Login</button></span>
+		<span *ngIf="this.authService.isLoggedIn()"><button class="logout" (click)="this.authService.logout()">Logout</button></span>
 	</div>
+
 	<div id="header">
 		<img src="/assets/img/vd.jpg" class="img">
 	</div>

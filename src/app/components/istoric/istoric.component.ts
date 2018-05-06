@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { IstoricService } from './istoric.service';
 import { Component, OnInit } from '@angular/core';
 @Component({
@@ -10,7 +11,8 @@ export class IstoricComponent implements OnInit {
   show: boolean;
   htmlContent: any;
   html: any;
-  constructor(public istoric: IstoricService) { }
+  constructor(public istoric: IstoricService,
+  private authService: AuthService) { }
 
   ngOnInit() {
     this.istoric.getHistories().snapshotChanges().subscribe(item => {

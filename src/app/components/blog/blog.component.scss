@@ -63,6 +63,7 @@
     .status {
         overflow: hidden;
         color: #474747;
+        word-wrap: break-word;
         p:last-child {
             margin-bottom: 0;
         }

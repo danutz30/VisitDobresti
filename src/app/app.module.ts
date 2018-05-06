@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { StiriService } from './components/stiri/stiri.service';
 import { IstoricService } from './components/istoric/istoric.service';
 import { StatusesService } from './components/blog/status.service';
@@ -29,6 +30,43 @@ import { MomentModule } from 'ngx-moment';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { StiriComponent } from './components/stiri/stiri.component';
 import { StiriDetaliateComponent } from './components/stiri/stiri-detaliate/stiri-detaliate.component';
+import { LoginComponent } from './components/login/login.component';
+import {
+  MatAutocompleteModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatInputModule,
+  MatListModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  NativeDateAdapter,
+  DateAdapter,
+  MAT_DATE_FORMATS,
+  MAT_DATE_LOCALE,
+  MAT_NATIVE_DATE_FORMATS,
+} from '@angular/material';
 
 const appRoutes: Routes = [
   { path: 'acasa', component: AcasaComponent },
@@ -54,7 +92,8 @@ const appRoutes: Routes = [
     EmployeeComponent,
     EmployeeListComponent,
     StiriComponent,
-    StiriDetaliateComponent
+    StiriDetaliateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -70,14 +109,45 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     MomentModule,
-    CKEditorModule
+    CKEditorModule,
+    MatAutocompleteModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatInputModule,
+    MatListModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
 
   ],
   providers: [
     StatusesService,
     IstoricService,
-    StiriService
+    StiriService,
+    AuthService
   ],
+  entryComponents: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

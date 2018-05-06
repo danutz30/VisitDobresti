@@ -38,12 +38,12 @@ exports.sendContactMessage = functions.database.ref('/messages/{pushKey}').onWri
     }
     const val = snapshot.val();
     const mailOptions = {
-        to: 'dany_anca2002@yahoo.com',
+        to: 'danyela_anca14@yahoo.com',
         subject: `Information Request from ${val.name}`,
         html: val.html
     };
     return mailTransport.sendMail(mailOptions).then(() => {
-        console.log('Mail sent to: dany_anca2002@yahoo.com');
+        console.log('Mail sent to: danyela_anca14@yahoo.com');
     });
 });
 //# sourceMappingURL=index.js.map

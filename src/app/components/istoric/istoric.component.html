@@ -1,5 +1,6 @@
 <h2>Istoric</h2>
-<button (click)="showEditor()"> Show Istoric Editor</button>
+<div *ngIf="this.authService.isLoggedIn()">
+<button (click)="showEditor()"> Arata editorul istoricului</button>
 <div *ngIf="show"> 
 <ckeditor 
 		[(ngModel)]="ckeditorContent" 
@@ -15,6 +16,7 @@
 		 debounce="500">
 </ckeditor>
 <button (click)="postHistory()"> Post Istoric</button>
+</div>
 </div>
 
 <div [innerHTML]="html"></div>
